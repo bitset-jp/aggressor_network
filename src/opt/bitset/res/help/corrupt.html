@@ -1,0 +1,22 @@
+<b>corrupt</> - Corrupt Packet<n>
+<n>
+Enables the emulation of random noise by introducing errors in random positions for a specified percentage of packets.<n>
+<b>USAGE:</><n>
+<s2><yellow>corrupt</> <cyan>PERCENT (%)</><n>
+<n>
+<b>ARGUMENTS:</><n>
+<s2><cyan>PERCENT</><t2>packet corruption rate (%)<n>
+<n>
+<b>EXAMPLES:</><n>
+<s2>0 > <b>corrupt 10%</><t2>  ... set loss<n>
+<s2><byellow>0*</>> <b>update</><t3>... Write to NIC<n>
+<s2>--- 22:24:43 ---<n>
+<s2>[0] eth0:  <yellow>qdisc netem 8009: root<n>
+<s4>refcnt 6 limit 1000 corrupt <b>10%</><n>
+<n>
+<b>NOTICE:</><n>
+<s2>Execute <yellow>update</> command to reflect on the NIC.<n>
+
+
+
+      

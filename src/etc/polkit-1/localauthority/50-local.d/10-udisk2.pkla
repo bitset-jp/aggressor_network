@@ -1,0 +1,6 @@
+[Allow user to mount devices]
+Identity=unix-group:plugdev
+Action=org.freedesktop.udisks2.filesystem-mount
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes

@@ -1,0 +1,20 @@
+<b>loss</> - Loss Packet<n>
+<n>
+Set an independent loss probability for the outgoing packets from the selected network interface.<n>
+Lost packets are not transmitted.<n>
+<n>
+<b>USAGE:</><n>
+<s2><yellow>loss</> <cyan>PERCENT (%)</><n>
+<n>
+<b>ARGUMENTS:</><n>
+<s2><cyan>PERCENT</><t2>packet loss rate (%)<n>
+<n>
+<b>EXAMPLES:</><n>
+<s2>0 > <b>loss 10%</><t2>  ... set loss<n>
+<s2><byellow>0*</>> <b>update</><t3>... Write to NIC<n>
+<s2>--- 22:24:43 ---<n>
+<s2>[0] eth0:  <yellow>qdisc netem 8009: root<n>
+<s4>refcnt 6 limit 1000 loss <b>10%</><n>
+<n>
+<b>NOTICE:</><n>
+<s2>Execute <yellow>update</> command to reflect on the NIC.<n>

@@ -1,0 +1,8 @@
+.vscode/
+__pycache__/
+tmp/
+*.py[cod]
+*$py.class
+*.swp
+*.old
+*.bk

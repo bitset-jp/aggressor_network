@@ -1,0 +1,33 @@
+<b>rate</> - Filter Option<n>
+<n>
+Regulate the rate of outband traffic.<n>
+<n>
+<b>USAGE:</><n>
+<s2><yellow>rate</> <cyan>speed</><n>
+<n>
+<b>ARGUMENTS:</><n>
+<s2><cyan>speed</><s2>Traffic rate<n>
+<s4>ex: 100Mbit, 64kbps<n>
+<n>
+<s6>- <cyan>(default)</><t>bit / second<n>
+<s6>- <cyan>bit</><t2>bit / second<n>
+<s6>- <cyan>bps</><t2>byte/ second<n>
+<n>
+<s6>- <cyan>K</><t3>Killo<n>
+<s6>- <cyan>M</><t3>Mega<n>
+<s6>- <cyan>G</><t3>Giga<n>
+<n>
+<b>EXAMPLES:</><n>
+<s2>0 > <b>rate 100Mbit</><t>... set rate<n>
+<s2><byellow>0*</>> <b>update</><t2>... Write to NIC<n>
+<s2>--- 22:24:43 ---<n>
+<s2>[0] eth0:  <yellow>qdisc netem 8009: root<n>
+<s4>refcnt 6 limit 1000 rate <b>100Mbit</><n>
+<s4><cyan>Sent 182 bytes 3 pkt (dropped 0,<n>
+<s4>overlimits 0 backlog 0b 0p requeues 0</><n>
+
+<n>
+<b>NOTICE:</><n>
+<s2>Execute <yellow>update</> command to reflect on the NIC.<n>
+
+

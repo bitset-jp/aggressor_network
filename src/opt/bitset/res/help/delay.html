@@ -1,0 +1,31 @@
+<b>delay</> - Delay Packet<n>
+<n>
+Delay the outgoing packets to the selected network interface.<n>
+Delay tim, jitter time and the fluctuation rate of jitter time can be set.<n>
+<n>
+<b>USAGE:</><n>
+<s2><yellow>delay</> <cyan>TIME (JITTER) (CORRELATION)</><n>
+<n>
+<b>ARGUMENTS:</><n>
+<s2><cyan>TIME</><t5>delay time<n>
+<s2><cyan>JITTER</><t4>jitter time<n>
+<s2><cyan>CORRELATION</><t>fluctuation rate (%)<n>
+<n>
+Time Unit<n>
+<s2>- <cyan>s</><t3>second<n>
+<s2>- <cyan>ms</><t3>millisecond<n>
+<s2>- <cyan>us</><t3>microsecond<n>
+<n>
+<b>EXAMPLES:</><n>
+<s2>0 > <b>delay 100ms</><t2>... set delay<n>
+<s2><byellow>0*</>> <b>update</><t4>... Write to NIC<n>
+<s2>--- 22:24:43 ---<n>
+<s2>[0] eth0:  <yellow>qdisc netem 8009: root<n>
+<s4>refcnt 6 limit 1000 delay <b>100ms</><n>
+<n>
+<s2>0 > <b>delay 100ms 10ms 20%</><n>
+
+<n>
+<b>NOTICE:</><n>
+<s2>Execute <yellow>update</> command to reflect on the NIC.<n>
+

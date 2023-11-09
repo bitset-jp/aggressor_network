@@ -1,0 +1,12 @@
+[Unit]
+Description = bitset usb mount service
+[Service]
+ExecStart = /opt/bitset/bin/usb_mount_service.sh
+ExecStop = /usr/bin/pkill -f usb_mount_service.sh
+Restart = always
+Type = simple
+
+User=bitset
+
+[Install]
+WantedBy = multi-user.target

@@ -1,0 +1,6 @@
+_build
+build
+
+*.pyc
+*.bak
+*~

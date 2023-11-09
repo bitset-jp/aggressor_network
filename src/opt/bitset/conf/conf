@@ -1,0 +1,11 @@
+LOG_DIR=/tmp
+EXIT_FILE=/tmp/restart
+MOUNT_INFO=/tmp/mount_info
+
+TITLE="NETWORK EMULATOR"
+APP_NAME=aggressor_main.py
+
+#TIMESTAMP=$(date +%Y-%m-%dT%H:%M:%S)
+BRIDGE=br0
+NICS="eth0 eth1"
+DEV="eth0"

@@ -1,0 +1,2 @@
+console=tty1 root=PARTUUID=30bb3e2a-02 rootfstype=ext4  rootwait logo.nologo quiet
+
