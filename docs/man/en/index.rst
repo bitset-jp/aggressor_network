@@ -12,7 +12,7 @@ Operating Manual
 .. toctree::
    :numbered:
    :maxdepth: 1
-   :caption: 目次:
+   :caption: Contents:
    
 
    overview

@@ -1,6 +1,6 @@
 .. _command_list:
 
-コマンド一覧
+Command List
 ================
 
 
