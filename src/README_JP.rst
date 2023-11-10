@@ -31,7 +31,7 @@ Linuxの提供する tc-netem (Network Emulator) に対する簡易UIを提供�
 
 Raspberry Pi 4 向けに調整・動作確認しています。
 
-Hadware:
+Hardware:
 
 - Raspberry Pi 4
 - USB to Ethernet Adapter (x1)
