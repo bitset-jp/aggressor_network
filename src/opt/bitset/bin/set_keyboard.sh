@@ -4,7 +4,7 @@ BASE_DIR=$(cd $(dirname $0)/..; pwd)
 BIN_DIR=$BASE_DIR/bin
 APP_DIR=$BASE_DIR/app
 RES_DIR=$BASE_DIR/res
-KEY_DIR=$RES_DIR/keyboardx
+KEY_DIR=$RES_DIR/keyboard
 
 LOG_FILE=/tmp/keyboard.log
 

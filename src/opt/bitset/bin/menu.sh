@@ -28,7 +28,7 @@ export BRIDGE=$BRIDGE
 export MOUNT_INFO=$MOUNT_INFO
 export TITLE=$TITLE
 export CAPTURE_PATH=$BIN_DIR/capture.sh
-export CHANGE_KEYBOARDE_PATH=$BIN_DIR/set_keyboard.sh
+export CHANGE_KEYBOARD_PATH=$BIN_DIR/set_keyboard.sh
 export KEY_DIR=$RES_DIR/keyboard
 
 clear

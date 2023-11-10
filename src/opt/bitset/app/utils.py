@@ -56,7 +56,7 @@ def set_keyboard(args):
     print_usage(usage)
     return False
 
-  cmd = os.getenv('CHANGE_KEYBOARDE_PATH')
+  cmd = os.getenv('CHANGE_KEYBOARD_PATH')
   try:
     ret = subprocess.run([cmd, locale], capture_output=True)
 
