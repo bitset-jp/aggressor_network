@@ -1,0 +1,435 @@
+
+
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. 操作説明 &#8212; AGGRESSOR NETWORK 操作説明書 0.1 ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=792b5207"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/translations.js?v=4dbe4bdc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="4. コマンド" href="command.html" />
+    <link rel="prev" title="2. セットアップ" href="setup.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="command.html" title="4. コマンド"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="setup.html" title="2. セットアップ"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AGGRESSOR NETWORK 操作説明書 0.1 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3. </span>操作説明</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1><span class="section-number">3. </span>操作説明<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<section id="id2">
+<h2><span class="section-number">3.1. </span>画面構成<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<p>本装置の実行画面です。</p>
+<figure class="align-default" id="id8">
+<a class="reference internal image-reference" href="_images/ss_overview.png"><img alt="_images/ss_overview.png" src="_images/ss_overview.png" style="width: 95%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 3.1 </span><span class="caption-text">実行画面</span><a class="headerlink" href="#id8" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>画面は次の５つに分割されます。</p>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-number">表 3.1 </span><span class="caption-text">画面構成</span><a class="headerlink" href="#id9" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 18.2%" />
+<col style="width: 18.2%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>画面タイトル</p></th>
+<th class="head"><p>本書での名称</p></th>
+<th class="head"><p>機能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0 main</p></td>
+<td><p>0:メイン画面</p></td>
+<td><p>コマンド入力画面です。</p></td>
+</tr>
+<tr class="row-odd"><td><p>1 HELP</p></td>
+<td><p>1:ヘルプ画面</p></td>
+<td><p>ヘルプを表示します。</p></td>
+</tr>
+<tr class="row-even"><td><p>2 I/O Stat</p></td>
+<td><p>2:通信量画面</p></td>
+<td><p>毎秒の通信量を表示します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>3 eth0</p></td>
+<td><p>3:eth0画面</p></td>
+<td><p>eth0 の通信状態を表示します。(iftop / tcpdump 切り替え)</p></td>
+</tr>
+<tr class="row-even"><td><p>4 eth1</p></td>
+<td><p>4:eth1画面</p></td>
+<td><p>eth1 の通信状態を表示します。(iftop / tcpdump 切り替え)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="main">
+<h2><span class="section-number">3.2. </span>メイン画面 (0:main)<a class="headerlink" href="#main" title="この見出しへのパーマリンク">¶</a></h2>
+<p>コマンド操作を行う画面です。</p>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="_images/ss_0_main.png"><img alt="_images/ss_0_main.png" src="_images/ss_0_main.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 3.2 </span><span class="caption-text">メイン画面</span><a class="headerlink" href="#id10" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>キー入力は全てこの画面で行い、以下のことができます。</p>
+<ol class="arabic simple">
+<li><p>ネットワークデバイスの選択</p></li>
+<li><p>フィルターの設定</p></li>
+<li><p>パケットキャプチャ</p></li>
+<li><p>システム設定</p></li>
+<li><p>ヘルプ表示の指示</p></li>
+</ol>
+<section id="id3">
+<h3><span class="section-number">3.2.1. </span>フィルター情報表示<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ENTER</span></code> を押すか、コマンドを実行するたびに最新のフィルター情報を表示します。</p>
+<figure class="align-default" id="id11">
+<a class="reference internal image-reference" href="_images/prompt.png"><img alt="_images/prompt.png" src="_images/prompt.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 3.3 </span><span class="caption-text">フィルター設定情報</span><a class="headerlink" href="#id11" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>1行目 ( &quot;[0] eth0:... &quot;, &quot;[1] eth1:... &quot; )</p>
+<blockquote>
+<div><p>フィルター設定です。フィルターの詳細は <a class="reference internal" href="filter.html#filter"><span class="std std-ref">フィルター設定</span></a> を参照願います。</p>
+</div></blockquote>
+</li>
+<li><p>2-3行目 (青文字)</p>
+<blockquote>
+<div><p>ネットワークデバイス毎の通信統計です。</p>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-number">表 3.2 </span><span class="caption-text">表示項目</span><a class="headerlink" href="#id12" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>意味</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sent</p></td>
+<td><p>送信バイト数、パケット数</p></td>
+</tr>
+<tr class="row-odd"><td><p>dropped</p></td>
+<td><p>破棄</p></td>
+</tr>
+<tr class="row-even"><td><p>overlimit</p></td>
+<td><p>キューが一杯になった回数</p></td>
+</tr>
+<tr class="row-odd"><td><p>requeues</p></td>
+<td><p>再送のためのキューイング</p></td>
+</tr>
+<tr class="row-even"><td><p>backlog</p></td>
+<td><p>T.B.D</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h3><span class="section-number">3.2.2. </span>ネットワークデバイスの選択<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
+<p>プロンプトのネットワークデバイスの選択状態を表します。</p>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-number">表 3.3 </span><span class="caption-text">プロンプト</span><a class="headerlink" href="#id13" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>プロンプト</p></th>
+<th class="head"><p>選択状態</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&gt;</span></code></p></td>
+<td><p>eth0 を選択</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&gt;</span></code></p></td>
+<td><p>eth1 を選択</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span></code></p></td>
+<td><p>両方(eth0, eth1)を選択</p></td>
+</tr>
+</tbody>
+</table>
+<p>デバイス選択コマンド( <code class="docutils literal notranslate"><span class="pre">0</span></code> / <code class="docutils literal notranslate"><span class="pre">1</span></code> / <code class="docutils literal notranslate"><span class="pre">a</span></code> ) で切り替えることができます。</p>
+<p>0: eth0を選択:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">[</span><span class="n">ENTER</span><span class="p">]</span>
+<span class="mi">0</span> <span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>1: eth1を選択:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">[</span><span class="n">ENTER</span><span class="p">]</span>
+<span class="mi">1</span> <span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>a: 両方(eth0, eth1)を選択:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="p">[</span><span class="n">ENTER</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="help">
+<h2><span class="section-number">3.3. </span>ヘルプ画面 (1:HELP)<a class="headerlink" href="#help" title="この見出しへのパーマリンク">¶</a></h2>
+<p>コマンドのヘルプを表示します。</p>
+<figure class="align-default" id="id14">
+<a class="reference internal image-reference" href="_images/ss_1_help.png"><img alt="_images/ss_1_help.png" src="_images/ss_1_help.png" style="width: 141.75px; height: 234.49999999999997px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 3.4 </span><span class="caption-text">ヘルプ画面 (コマンド一覧)</span><a class="headerlink" href="#id14" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>「0:メイン画面」で <code class="docutils literal notranslate"><span class="pre">help</span> <span class="pre">コマンド名</span></code> と入力すると、そのコマンドのヘルプを表示します。</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>a &gt; help rate
+</pre></div>
+</div>
+<figure class="align-default" id="id15">
+<a class="reference internal image-reference" href="_images/ss_1_help_rate.png"><img alt="_images/ss_1_help_rate.png" src="_images/ss_1_help_rate.png" style="width: 141.04999999999998px; height: 225.74999999999997px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 3.5 </span><span class="caption-text">ヘルプ画面 (help rate)</span><a class="headerlink" href="#id15" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>使用可能なコマンドは <a class="reference internal" href="command_list.html#command-list"><span class="std std-ref">コマンド一覧</span></a> を参照してください。</p>
+</div>
+</section>
+<section id="i-o-stat">
+<h2><span class="section-number">3.4. </span>通信量画面 (2:I/O Stat)<a class="headerlink" href="#i-o-stat" title="この見出しへのパーマリンク">¶</a></h2>
+<p>ネットワークデバイス (eth0, eth1)の各送受信量を１秒毎に更新します。</p>
+<figure class="align-default" id="id16">
+<a class="reference internal image-reference" href="_images/ss_2_io_stat.png"><img alt="_images/ss_2_io_stat.png" src="_images/ss_2_io_stat.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 3.6 </span><span class="caption-text">通信量画面</span><a class="headerlink" href="#id16" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>時刻, eth0(受信, 送信), eth1(受信, 送信) の並びで表示します。
+また、通信量によって数字の色が変化します。</p>
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-number">表 3.4 </span><span class="caption-text">通信量の色</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 11.1%" />
+<col style="width: 88.9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>色</p></th>
+<th class="head"><p>単位</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>赤</p></td>
+<td><p>Byte</p></td>
+</tr>
+<tr class="row-odd"><td><p>黄</p></td>
+<td><p>Kbyte</p></td>
+</tr>
+<tr class="row-even"><td><p>緑</p></td>
+<td><p>Mbyte</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>起動時にネットワークデバイスが非アクティブ(=接続されていない)場合、起動後にネットワークに接続しても通信量が表示されません。
+その際は、「0:メイン画面」で <code class="docutils literal notranslate"><span class="pre">stat</span></code> コマンドを実行して下さい。</p>
+</div>
+</section>
+<section id="eth0-3-eth0-eth1-4-eth1">
+<h2><span class="section-number">3.5. </span>eth0画面(3:eth0) / eth1画面 (4:eth1)<a class="headerlink" href="#eth0-3-eth0-eth1-4-eth1" title="この見出しへのパーマリンク">¶</a></h2>
+<p>ネットワークデバイスの通信状態(iftop, tcpdump のいずれか)を表示します。</p>
+<ul>
+<li><p>iftop</p>
+<p>TCPコネクション単位での帯域を表示します。</p>
+</li>
+<li><p>tcpdump</p>
+<p>ネットワークパケットを表示します。</p>
+</li>
+</ul>
+<section id="id5">
+<h3><span class="section-number">3.5.1. </span>表示切り替え<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<p>「0:メイン画面」からコマンド入力で表示を切り替えます。</p>
+<section id="iftop">
+<h4><span class="section-number">3.5.1.1. </span>(1) iftop<a class="headerlink" href="#iftop" title="この見出しへのパーマリンク">¶</a></h4>
+<blockquote>
+<div><figure class="align-default" id="id18">
+<a class="reference internal image-reference" href="_images/ss_3-4_eth.png"><img alt="_images/ss_3-4_eth.png" src="_images/ss_3-4_eth.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 3.7 </span><span class="caption-text">iftopのみ</span><a class="headerlink" href="#id18" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>手順:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">&gt;</span> <span class="n">a</span>        <span class="o">...</span> <span class="n">両方のデバイスを選択</span>
+<span class="n">a</span> <span class="o">&gt;</span> <span class="n">iftop</span>    <span class="o">...</span> <span class="n">表示切り替え</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="tcpdump">
+<h4><span class="section-number">3.5.1.2. </span>(2) tcpdump<a class="headerlink" href="#tcpdump" title="この見出しへのパーマリンク">¶</a></h4>
+<blockquote>
+<div><figure class="align-default" id="id19">
+<a class="reference internal image-reference" href="_images/ss_3-4_eth_tcpdump.png"><img alt="_images/ss_3-4_eth_tcpdump.png" src="_images/ss_3-4_eth_tcpdump.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 3.8 </span><span class="caption-text">tcpdumpのみ</span><a class="headerlink" href="#id19" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>手順:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">&gt;</span> <span class="n">a</span>          <span class="o">...</span> <span class="n">両方のデバイスを選択</span>
+<span class="n">a</span> <span class="o">&gt;</span> <span class="n">tcpdump</span>    <span class="o">...</span> <span class="n">表示切り替え</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="id6">
+<h4><span class="section-number">3.5.1.3. </span>(3) 混在<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h4>
+<p>左(eth0), 右(eth1) で異なる表示にすることも可能です。</p>
+<blockquote>
+<div><figure class="align-default" id="id20">
+<a class="reference internal image-reference" href="_images/ss_3-4_eth_mix.png"><img alt="_images/ss_3-4_eth_mix.png" src="_images/ss_3-4_eth_mix.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 3.9 </span><span class="caption-text">iftop(左:eth0), tcpdump(右:eth1)</span><a class="headerlink" href="#id20" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>手順:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span>          <span class="o">...</span> <span class="n">eth0</span> <span class="n">を選択</span>
+<span class="mi">0</span> <span class="o">&gt;</span> <span class="n">iftop</span>      <span class="o">...</span> <span class="n">eth0</span> <span class="n">の表示切り替え</span>
+<span class="mi">0</span> <span class="o">&gt;</span> <span class="mi">1</span>          <span class="o">...</span> <span class="n">eth1</span> <span class="n">を選択</span>
+<span class="mi">1</span> <span class="o">&gt;</span> <span class="n">tcpdump</span>    <span class="o">...</span> <span class="n">eth1</span> <span class="n">の表示切り替え</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+</section>
+<section id="id7">
+<h3><span class="section-number">3.5.2. </span>表示サイズ変更<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
+<p>「0:メイン画面」から <code class="docutils literal notranslate"><span class="pre">height</span></code> コマンドで表示サイズ(行数) を変更できます。</p>
+<p>手順:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">&gt;</span> <span class="n">height</span> <span class="mi">20</span>     <span class="o">...</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">35</span> <span class="n">に範囲で指定</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>デバイスの選択状態に関係なく、画面3,4 同時に変更されます。</p>
+</div>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">目次</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">3. 操作説明</a><ul>
+<li><a class="reference internal" href="#id2">3.1. 画面構成</a></li>
+<li><a class="reference internal" href="#main">3.2. メイン画面 (0:main)</a><ul>
+<li><a class="reference internal" href="#id3">3.2.1. フィルター情報表示</a></li>
+<li><a class="reference internal" href="#id4">3.2.2. ネットワークデバイスの選択</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#help">3.3. ヘルプ画面 (1:HELP)</a></li>
+<li><a class="reference internal" href="#i-o-stat">3.4. 通信量画面 (2:I/O Stat)</a></li>
+<li><a class="reference internal" href="#eth0-3-eth0-eth1-4-eth1">3.5. eth0画面(3:eth0) / eth1画面 (4:eth1)</a><ul>
+<li><a class="reference internal" href="#id5">3.5.1. 表示切り替え</a><ul>
+<li><a class="reference internal" href="#iftop">3.5.1.1. (1) iftop</a></li>
+<li><a class="reference internal" href="#tcpdump">3.5.1.2. (2) tcpdump</a></li>
+<li><a class="reference internal" href="#id6">3.5.1.3. (3) 混在</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">3.5.2. 表示サイズ変更</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>前のトピックへ</h4>
+    <p class="topless"><a href="setup.html"
+                          title="前の章へ"><span class="section-number">2. </span>セットアップ</a></p>
+  </div>
+  <div>
+    <h4>次のトピックへ</h4>
+    <p class="topless"><a href="command.html"
+                          title="次の章へ"><span class="section-number">4. </span>コマンド</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="command.html" title="4. コマンド"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="setup.html" title="2. セットアップ"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AGGRESSOR NETWORK 操作説明書 0.1 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3. </span>操作説明</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; 著作権 2023, bitset.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>

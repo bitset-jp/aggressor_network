@@ -1,0 +1,271 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.4. Packet Capture &#8212; AGGRESSOR NETWORK USER MANUAL 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.5. System Configuration" href="settings.html" />
+    <link rel="prev" title="4.3. Setting Filter" href="filter.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="settings.html" title="4.5. System Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="filter.html" title="4.3. Setting Filter"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">AGGRESSOR NETWORK USER MANUAL 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U"><span class="section-number">4. </span>Command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4.4. </span>Packet Capture</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="packet-capture">
+<h1><span class="section-number">4.4. </span>Packet Capture<a class="headerlink" href="#packet-capture" title="Permalink to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>To use “Packet Capture”, USB memory is required. (USB3.0 is recommended)</p></li>
+<li><p>Results are confirmed using Wireshark on PC.</p></li>
+</ol>
+</div>
+<section id="procedure-for-packet-capture">
+<h2><span class="section-number">4.4.1. </span>Procedure for packet capture<a class="headerlink" href="#procedure-for-packet-capture" title="Permalink to this heading">¶</a></h2>
+<section id="start">
+<h3><span class="section-number">4.4.1.1. </span>(1) Start<a class="headerlink" href="#start" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>Insert USB memory into USB3.0 port.</p>
+<p>When USB memory is recognized, the message <cite>insert USB memory</cite> is displayed.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/ss_insert_usb.png"><img alt="../_images/ss_insert_usb.png" src="../_images/ss_insert_usb.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.13 </span><span class="caption-text">USB memory insertion message</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure that there is enough free space on the USB memory.</p>
+</div>
+</li>
+<li><p>Enter the capture start command on the main screen.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cap</span> <span class="n">start</span>  <span class="p">{</span><span class="n">rotate</span> <span class="n">interval</span> <span class="p">(</span><span class="n">seconds</span><span class="p">)}</span>
+</pre></div>
+</div>
+<p>By default, the file is rotated every 3600 seconds (1 hour). If you want to change the interval, specify it with an argument.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/ss_cap_start.png"><img alt="../_images/ss_cap_start.png" src="../_images/ss_cap_start.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.14 </span><span class="caption-text">Capture start</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>In the above example, capture of both eth0 and eth1 is started.</p>
+</li>
+</ol>
+</section>
+<section id="stop">
+<h3><span class="section-number">4.4.1.2. </span>(2) Stop<a class="headerlink" href="#stop" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>Enter the capture stop command on the main screen.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cap</span> <span class="n">stop</span>
+</pre></div>
+</div>
+</li>
+<li><p>Wait until the capture result file is saved.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/ss_cap_stop.png"><img alt="../_images/ss_cap_stop.png" src="../_images/ss_cap_stop.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.15 </span><span class="caption-text">Capture stop</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>After <code class="docutils literal notranslate"><span class="pre">stopped</span></code>, if the file list in the USB memory is displayed, the processing is completed.</p>
+</li>
+<li><p>Remove the USB memory.</p></li>
+</ol>
+</section>
+<section id="result-confirmation">
+<h3><span class="section-number">4.4.1.3. </span>(3) Result confirmation<a class="headerlink" href="#result-confirmation" title="Permalink to this heading">¶</a></h3>
+<p>Open and check the capture file (*.gz) saved on the USB memory with Wireshark. (No need to unzip the gz file)</p>
+<p>The files are saved with the following naming convention.</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>eth{0|1}_{YYYY-MM-DD_hh-mm-ss}.pcap.gz
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic">
+<li><p>Open the file in the [File]-[Open] menu of Wireshark.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/ss_wireshark_open.png"><img alt="../_images/ss_wireshark_open.png" src="../_images/ss_wireshark_open.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.16 </span><span class="caption-text">ファイルを開く=&gt; Open file</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Display capture data.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/ss_wireshark.png"><img alt="../_images/ss_wireshark.png" src="../_images/ss_wireshark.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.17 </span><span class="caption-text">Display in Wireshark</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+</section>
+<section id="ls-list-files-on-usb-memory">
+<h2><span class="section-number">4.4.2. </span>ls: List files on USB memory<a class="headerlink" href="#ls-list-files-on-usb-memory" title="Permalink to this heading">¶</a></h2>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">ls</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<blockquote>
+<div><figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/ls.png"><img alt="../_images/ls.png" src="../_images/ls.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.18 </span><span class="caption-text">Example of ls command execution</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">\*.pcap.gz</span></code> is the result of packet capture.</p>
+</section>
+<section id="cap-start-start-packet-capture">
+<h2><span class="section-number">4.4.3. </span>cap start: Start packet capture<a class="headerlink" href="#cap-start-start-packet-capture" title="Permalink to this heading">¶</a></h2>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cap</span> <span class="n">start</span>  <span class="p">{</span><span class="n">ローテート間隔</span> <span class="p">(</span><span class="n">秒</span><span class="p">)}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id7">
+<caption><span class="caption-number">Table 4.16 </span><span class="caption-text">cap start コマンドの引数</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rotate interval</p></td>
+<td><p>x</p></td>
+<td><p>unit:seconds, range:60 - 3600 (default 3600)</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="cap-stop-stop-packet-capture">
+<h2><span class="section-number">4.4.4. </span>cap stop: Stop packet capture<a class="headerlink" href="#cap-stop-stop-packet-capture" title="Permalink to this heading">¶</a></h2>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cap</span> <span class="n">stop</span>
+</pre></div>
+</div>
+<p>After executing the command, the unsaved data is written to the USB memory, so please wait for a while.
+If the file list on the USB memory is displayed, the processing is completed.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">4.4. Packet Capture</a><ul>
+<li><a class="reference internal" href="#procedure-for-packet-capture">4.4.1. Procedure for packet capture</a><ul>
+<li><a class="reference internal" href="#start">4.4.1.1. (1) Start</a></li>
+<li><a class="reference internal" href="#stop">4.4.1.2. (2) Stop</a></li>
+<li><a class="reference internal" href="#result-confirmation">4.4.1.3. (3) Result confirmation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ls-list-files-on-usb-memory">4.4.2. ls: List files on USB memory</a></li>
+<li><a class="reference internal" href="#cap-start-start-packet-capture">4.4.3. cap start: Start packet capture</a></li>
+<li><a class="reference internal" href="#cap-stop-stop-packet-capture">4.4.4. cap stop: Stop packet capture</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="filter.html"
+                          title="previous chapter"><span class="section-number">4.3. </span>Setting Filter</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="settings.html"
+                          title="next chapter"><span class="section-number">4.5. </span>System Configuration</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="settings.html" title="4.5. System Configuration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="filter.html" title="4.3. Setting Filter"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">AGGRESSOR NETWORK USER MANUAL 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" ><span class="section-number">4. </span>Command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4.4. </span>Packet Capture</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, bitset.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>

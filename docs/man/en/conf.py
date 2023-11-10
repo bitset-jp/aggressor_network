@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'AGGRESSOR NETWORK 操作説明書'
+project = 'AGGRESSOR NETWORK USER MANUAL'
 copyright = '2023, bitset'
-author = '株式会社bitset'
+author = 'Inc. bitset'
 release = '0.1'
 
 # -- General configuration ---------------------------------------------------
@@ -24,7 +24,7 @@ todo_include_todos=True
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-language = 'ja'
+language = 'en'
 numfig = True
 
 # -- Options for HTML output -------------------------------------------------

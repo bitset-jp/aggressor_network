@@ -1,0 +1,265 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.2. General Commands &#8212; AGGRESSOR NETWORK USER MANUAL 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.3. Setting Filter" href="filter.html" />
+    <link rel="prev" title="4.1. Command List" href="command_list.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="filter.html" title="4.3. Setting Filter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="command_list.html" title="4.1. Command List"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">AGGRESSOR NETWORK USER MANUAL 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U"><span class="section-number">4. </span>Command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4.2. </span>General Commands</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="general-commands">
+<h1><span class="section-number">4.2. </span>General Commands<a class="headerlink" href="#general-commands" title="Permalink to this heading">¶</a></h1>
+<section id="ifconfig-display-network-settings">
+<h2><span class="section-number">4.2.1. </span>ifconfig: Display network settings<a class="headerlink" href="#ifconfig-display-network-settings" title="Permalink to this heading">¶</a></h2>
+<p>Displays the settings of the selected network device (eth0, eth1).</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 4.6 </span><span class="caption-text">Devices displayed by ifconfig</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Cursor</p></th>
+<th class="head"><p>Display content</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&gt;</span></code></p></td>
+<td><p>Display only eth0</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&gt;</span></code></p></td>
+<td><p>Display only eth1</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span></code></p></td>
+<td><p>Display both eth0 and eth1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">ifconfig</span>
+</pre></div>
+</div>
+<p>Execution example:</p>
+<blockquote>
+<div><figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/ss_ifconfig.png"><img alt="../_images/ss_ifconfig.png" src="../_images/ss_ifconfig.png" style="width: 95%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">ifconfig example</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</section>
+<section id="clear-clear-the-main-screen">
+<h2><span class="section-number">4.2.2. </span>clear: Clear the main screen<a class="headerlink" href="#clear-clear-the-main-screen" title="Permalink to this heading">¶</a></h2>
+<p>Clears the main screen(0:main screen).</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">clear</span>
+</pre></div>
+</div>
+</section>
+<section id="help-display-help">
+<h2><span class="section-number">4.2.3. </span>help: Display help<a class="headerlink" href="#help-display-help" title="Permalink to this heading">¶</a></h2>
+<p>Displays the help screen on “1:help screen”.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">help</span> <span class="p">{</span><span class="n">command_name</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Execution example:</p>
+<blockquote>
+<div><figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/ss_1_help_rate.png"><img alt="../_images/ss_1_help_rate.png" src="../_images/ss_1_help_rate.png" style="width: 95%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">help screen (help rate)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</section>
+<section id="stat-redisplay-the-traffic-statistics-screen">
+<h2><span class="section-number">4.2.4. </span>stat: Redisplay the traffic statistics screen<a class="headerlink" href="#stat-redisplay-the-traffic-statistics-screen" title="Permalink to this heading">¶</a></h2>
+<p>Redisplay the traffic statistics screen on “2:stat screen”.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">stat</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there was no active network device when booting, activating the network device will not display the traffic statistics screen.
+In that case, execute “stat” command.</p>
+</div>
+</section>
+<section id="iftop">
+<h2><span class="section-number">4.2.5. </span>iftop<a class="headerlink" href="#iftop" title="Permalink to this heading">¶</a></h2>
+<p>Make “3:eth0 screen” and “4:eth1 screen” to display iftop.</p>
+<p>Selected network device(s) will change to iftop mode.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">iftop</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/ss_3-4_eth.png"><img alt="../_images/ss_3-4_eth.png" src="../_images/ss_3-4_eth.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.3 </span><span class="caption-text">iftop</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="tcpdump">
+<h2><span class="section-number">4.2.6. </span>tcpdump<a class="headerlink" href="#tcpdump" title="Permalink to this heading">¶</a></h2>
+<p>Make “3:eth0 screen” and “4:eth1 screen” to display tcpdump.</p>
+<p>Selected network device(s) will change to tcpdump mode.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">tcpdump</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/ss_3-4_eth_tcpdump.png"><img alt="../_images/ss_3-4_eth_tcpdump.png" src="../_images/ss_3-4_eth_tcpdump.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.4 </span><span class="caption-text">tcpdump</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="height">
+<h2><span class="section-number">4.2.7. </span>height<a class="headerlink" href="#height" title="Permalink to this heading">¶</a></h2>
+<p>Change the height of “3:eth0 screen” and “4:eth1 screen”.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">height</span> <span class="p">{</span><span class="n">number_of_lines</span><span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Table 4.7 </span><span class="caption-text">arguments of height command</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>number_of_lines</p></td>
+<td><p>Yes</p></td>
+<td><p>10 - 35</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Execution example:</p>
+<blockquote>
+<div><p>&gt; height 20</p>
+</div></blockquote>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">4.2. General Commands</a><ul>
+<li><a class="reference internal" href="#ifconfig-display-network-settings">4.2.1. ifconfig: Display network settings</a></li>
+<li><a class="reference internal" href="#clear-clear-the-main-screen">4.2.2. clear: Clear the main screen</a></li>
+<li><a class="reference internal" href="#help-display-help">4.2.3. help: Display help</a></li>
+<li><a class="reference internal" href="#stat-redisplay-the-traffic-statistics-screen">4.2.4. stat: Redisplay the traffic statistics screen</a></li>
+<li><a class="reference internal" href="#iftop">4.2.5. iftop</a></li>
+<li><a class="reference internal" href="#tcpdump">4.2.6. tcpdump</a></li>
+<li><a class="reference internal" href="#height">4.2.7. height</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="command_list.html"
+                          title="previous chapter"><span class="section-number">4.1. </span>Command List</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="filter.html"
+                          title="next chapter"><span class="section-number">4.3. </span>Setting Filter</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="filter.html" title="4.3. Setting Filter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="command_list.html" title="4.1. Command List"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">AGGRESSOR NETWORK USER MANUAL 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" ><span class="section-number">4. </span>Command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4.2. </span>General Commands</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, bitset.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>

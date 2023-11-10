@@ -1,0 +1,566 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.3. Setting Filter &#8212; AGGRESSOR NETWORK USER MANUAL 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.4. Packet Capture" href="capture.html" />
+    <link rel="prev" title="4.2. General Commands" href="operation.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="capture.html" title="4.4. Packet Capture"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="operation.html" title="4.2. General Commands"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">AGGRESSOR NETWORK USER MANUAL 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U"><span class="section-number">4. </span>Command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4.3. </span>Setting Filter</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="setting-filter">
+<span id="filter"></span><h1><span class="section-number">4.3. </span>Setting Filter<a class="headerlink" href="#setting-filter" title="Permalink to this heading">¶</a></h1>
+<section id="scope-of-filter-application">
+<h2><span class="section-number">4.3.1. </span>Scope of filter application<a class="headerlink" href="#scope-of-filter-application" title="Permalink to this heading">¶</a></h2>
+<p>The filter is applied to the output of the network device.</p>
+<p>For example, if you set a delay option for only one device, the delay will occur only in one direction of the packet,
+and no delay will occur in the opposite direction of the packet.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/filter_delay_one.png"><img alt="../_images/filter_delay_one.png" src="../_images/filter_delay_one.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Delay in one direction</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>So, if you want to delay in both directions, set the delay filter for both devices.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/filter_delay_both.png"><img alt="../_images/filter_delay_both.png" src="../_images/filter_delay_both.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Delay in both directions</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="edit">
+<h2><span class="section-number">4.3.2. </span>Edit<a class="headerlink" href="#edit" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="edit-command">
+<h2><span class="section-number">4.3.3. </span>Edit Command<a class="headerlink" href="#edit-command" title="Permalink to this heading">¶</a></h2>
+<p>The filter options are temporarily stored in the edit buffer and can be checked with the <cite>edit</cite> command.
+The <cite>update</cite> command applies the filter settings in the edit buffer.
+And it will be reset to the default with the <cite>reset</cite> command.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/filter_command.png"><img alt="../_images/filter_command.png" src="../_images/filter_command.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.7 </span><span class="caption-text">edit command</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<section id="id1">
+<h3><span class="section-number">4.3.3.1. </span>(1) edit<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>Displays the contents of the edit buffer that is being edited which has not been applied to the filter yet.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/edit.png"><img alt="../_images/edit.png" src="../_images/edit.png" style="width: 95%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.8 </span><span class="caption-text">edit command</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="update">
+<h3><span class="section-number">4.3.3.2. </span>(2) update<a class="headerlink" href="#update" title="Permalink to this heading">¶</a></h3>
+<p>Applies the contents of the edit buffer to the filter.</p>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/update.png"><img alt="../_images/update.png" src="../_images/update.png" style="width: 95%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.9 </span><span class="caption-text">update command</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>In the example above, the bandwidth is set to 64Kpbs (= 512Kbit / second).</p>
+</section>
+<section id="reset">
+<h3><span class="section-number">4.3.3.3. </span>(3) reset<a class="headerlink" href="#reset" title="Permalink to this heading">¶</a></h3>
+<p>Resets the applied and editing filter settings to the default.</p>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="../_images/reset.png"><img alt="../_images/reset.png" src="../_images/reset.png" style="width: 95%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.10 </span><span class="caption-text">reset command</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="filter-options">
+<h2><span class="section-number">4.3.4. </span>Filter options<a class="headerlink" href="#filter-options" title="Permalink to this heading">¶</a></h2>
+<p>When you enter a filter option, it is temporarily stored in the edit buffer.
+The <cite>update</cite> command applies the filter settings. (See previous section)</p>
+<section id="delay">
+<h3><span class="section-number">4.3.4.1. </span>(1) delay<a class="headerlink" href="#delay" title="Permalink to this heading">¶</a></h3>
+<p>Sets the delay time of the packet.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">delay</span> <span class="n">delay_time</span>   <span class="p">{</span><span class="n">jitter</span> <span class="n">time</span><span class="p">}</span>   <span class="p">{</span><span class="n">occurrence</span> <span class="n">rate</span><span class="p">(</span><span class="o">%</span><span class="p">)}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id8">
+<caption><span class="caption-number">Table 4.8 </span><span class="caption-text">delay option arguments</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>argument</p></th>
+<th class="head"><p>optional</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>delay_time</p></td>
+<td><p>required</p></td>
+<td><p>unit: s:second / ms:millisecond / us:microsecond</p></td>
+</tr>
+<tr class="row-odd"><td><p>jitter time</p></td>
+<td><p>optional</p></td>
+<td><p>unit: s:second / ms:millisecond / us:microsecond</p></td>
+</tr>
+<tr class="row-even"><td><p>jitter occurrence rate</p></td>
+<td><p>optional</p></td>
+<td><p>unit: %</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Execution example:</p>
+<ol class="loweralpha">
+<li><p>Generate a 100msec delay.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>delay<span class="w"> </span>100ms
+</pre></div>
+</div>
+</li>
+<li><p>Generate a delay of 100msec ± 20msec.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>delay<span class="w"> </span>100ms<span class="w">  </span>20ms
+</pre></div>
+</div>
+</li>
+<li><p>Generate a delay of 100msec ± 20msec for 50% and a delay of 100msec for the rest.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>delay<span class="w"> </span>100ms<span class="w">  </span>20ms<span class="w">  </span><span class="m">50</span>%
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Caution:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="n">the</span> <span class="n">case</span> <span class="n">of</span> <span class="n">communication</span> <span class="n">where</span> <span class="n">packet</span> <span class="nb">round</span> <span class="n">trip</span> <span class="n">occurs</span> <span class="n">like</span> <span class="n">ping</span> <span class="n">command</span><span class="p">,</span> <span class="n">the</span> <span class="n">total</span> <span class="n">delay</span> <span class="n">time</span> <span class="n">will</span> <span class="n">be</span> <span class="n">different</span> <span class="n">depending</span> <span class="n">on</span> <span class="n">the</span> <span class="n">application</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">filter</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="loweralpha">
+<li><p>When delay is set in both directions</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span>&gt;<span class="w"> </span>delay<span class="w"> </span>100ms
+</pre></div>
+</div>
+<p>A round trip delay of 200ms will occur.</p>
+<figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="../_images/filter_delay_both-2.png"><img alt="../_images/filter_delay_both-2.png" src="../_images/filter_delay_both-2.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.11 </span><span class="caption-text">Both directions delay</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>If you want to make it 100ms round trip, set the delay to 50ms on both sides.</p>
+</li>
+<li><p>When delay is set in one direction</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>delay<span class="w"> </span>100ms
+</pre></div>
+</div>
+<p>Only one direction will be delayed by 100ms.</p>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="../_images/filter_delay_one-2.png"><img alt="../_images/filter_delay_one-2.png" src="../_images/filter_delay_one-2.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.12 </span><span class="caption-text">Delay in one direction</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+<p>When the communication volume is biased:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">When</span> <span class="n">one</span> <span class="n">side</span> <span class="n">of</span> <span class="n">the</span> <span class="n">communication</span> <span class="n">volume</span> <span class="ow">is</span> <span class="n">large</span><span class="p">(</span><span class="k">for</span> <span class="n">example</span><span class="p">,</span> <span class="n">download</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">server</span><span class="p">),</span> <span class="n">be</span> <span class="n">careful</span> <span class="n">about</span> <span class="n">the</span> <span class="n">setting</span> <span class="n">direction</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">filter</span><span class="o">.</span>
+
+<span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="o">/</span><span class="n">_static</span><span class="o">/</span><span class="n">filter_download</span><span class="o">.</span><span class="n">png</span>
+   <span class="p">:</span><span class="n">width</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
+
+   <span class="n">Example</span> <span class="n">of</span> <span class="n">biased</span> <span class="n">communication</span> <span class="n">volume</span>
+</pre></div>
+</div>
+</section>
+<section id="loss-loss-packet-loss">
+<h3><span class="section-number">4.3.4.2. </span>(2) loss: Loss (packet loss)<a class="headerlink" href="#loss-loss-packet-loss" title="Permalink to this heading">¶</a></h3>
+<p>Generates packet loss at a specified rate.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">loss</span>  <span class="n">loss_rate</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id11">
+<caption><span class="caption-number">Table 4.9 </span><span class="caption-text">loss option arguments</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>argument</p></th>
+<th class="head"><p>optional</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>loss_rate</p></td>
+<td><p>required</p></td>
+<td><p>unit: %</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Execution example:</p>
+<ol class="loweralpha">
+<li><p>10% packet loss.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>loss<span class="w"> </span><span class="m">10</span>%
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Like delay, the filter is applied to the output of the network device.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>duplicate: Duplicate</p></li>
+</ol>
+<p>Generates duplicate packets.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">duplicate</span>  <span class="n">occurrence</span> <span class="n">rate</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id12">
+<caption><span class="caption-number">Table 4.10 </span><span class="caption-text">duplicate option arguments</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>argument</p></th>
+<th class="head"><p>optional</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>occurrence rate</p></td>
+<td><p>required</p></td>
+<td><p>unit: %</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Execution example:</p>
+<ol class="loweralpha">
+<li><p>10% duplicate packets.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>duplicate<span class="w"> </span><span class="m">10</span>%
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Like delay, the filter is applied to the output of the network device.</p>
+</div>
+</section>
+<section id="corrupt-corrupt">
+<h3><span class="section-number">4.3.4.3. </span>(4) corrupt: Corrupt<a class="headerlink" href="#corrupt-corrupt" title="Permalink to this heading">¶</a></h3>
+<p>Rewrites the packet data (inverts a random 1bit)</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">corrupt</span>  <span class="n">occurrence</span> <span class="n">rate</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id13">
+<caption><span class="caption-number">Table 4.11 </span><span class="caption-text">corrupt option arguments</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>argument</p></th>
+<th class="head"><p>optional</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>occurrence rate</p></td>
+<td><p>required</p></td>
+<td><p>unit: %</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Execution example:</p>
+<ol class="loweralpha">
+<li><p>0.1% probability of rewriting a packet.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>corrupt<span class="w"> </span><span class="m">0</span>.1%
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Like delay, be careful about the application range of the filter.</p></li>
+<li><p>In the case of TCP/IP packets, the packet is discarded because the protocol stack detects the error with CRC check.
+If you disable the checksum in UDP packets, you need to detect the error at the upper layer.</p></li>
+</ol>
+</div>
+</section>
+<section id="reorder-reorder">
+<h3><span class="section-number">4.3.4.4. </span>(5) reorder: Reorder<a class="headerlink" href="#reorder-reorder" title="Permalink to this heading">¶</a></h3>
+<p>Changes the order of packet arrival.</p>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">reorder</span>  <span class="n">occurrence</span> <span class="n">rate</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id14">
+<caption><span class="caption-number">Table 4.12 </span><span class="caption-text">reorder option arguments</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>argument</p></th>
+<th class="head"><p>optional</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>occurrence rate</p></td>
+<td><p>required</p></td>
+<td><p>unit: %</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Execution example:</p>
+<ol class="loweralpha">
+<li><p>10% probability of changing the order of packet arrival.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>reorder<span class="w"> </span><span class="m">10</span>%
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Like delay, the filter is applied to the output of the network device.</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>rate: Bandwidth control</p></li>
+</ol>
+<p>Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">rate</span>  <span class="n">bandwidth</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id15">
+<caption><span class="caption-number">Table 4.13 </span><span class="caption-text">rate option arguments</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>argument</p></th>
+<th class="head"><p>optional</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bandwidth</p></td>
+<td><p>required</p></td>
+<td><p>unit: bps:byte/second / bit:bit/second / K:Kbit / M:Mbit / G:Gbit</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-number">Table 4.14 </span><span class="caption-text">unit</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>notation</p></th>
+<th class="head"><p>actual meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bps</p></td>
+<td><p>byte/second</p></td>
+</tr>
+<tr class="row-odd"><td><p>bit</p></td>
+<td><p>bit/second</p></td>
+</tr>
+<tr class="row-even"><td><p>unspecified</p></td>
+<td><p>bit/second</p></td>
+</tr>
+<tr class="row-odd"><td><p>K / k</p></td>
+<td><p>Killo (1,000)</p></td>
+</tr>
+<tr class="row-even"><td><p>M / m</p></td>
+<td><p>Mega (1,000,000)</p></td>
+</tr>
+<tr class="row-odd"><td><p>G / g</p></td>
+<td><p>Giga (1,000,000,000)</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-number">Table 4.15 </span><span class="caption-text">setting</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>value example</p></th>
+<th class="head"><p>actual meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1000</p></td>
+<td><p>1K bit/second</p></td>
+</tr>
+<tr class="row-odd"><td><p>1K</p></td>
+<td><p>1K bit/second</p></td>
+</tr>
+<tr class="row-even"><td><p>1Kbit</p></td>
+<td><p>1K bit/second</p></td>
+</tr>
+<tr class="row-odd"><td><p>1Kbps</p></td>
+<td><p>1K byte/second</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Execution example:</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>rate<span class="w"> </span>64kbps
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Like delay, the filter is applied to the output of the network device.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">4.3. Setting Filter</a><ul>
+<li><a class="reference internal" href="#scope-of-filter-application">4.3.1. Scope of filter application</a></li>
+<li><a class="reference internal" href="#edit">4.3.2. Edit</a></li>
+<li><a class="reference internal" href="#edit-command">4.3.3. Edit Command</a><ul>
+<li><a class="reference internal" href="#id1">4.3.3.1. (1) edit</a></li>
+<li><a class="reference internal" href="#update">4.3.3.2. (2) update</a></li>
+<li><a class="reference internal" href="#reset">4.3.3.3. (3) reset</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#filter-options">4.3.4. Filter options</a><ul>
+<li><a class="reference internal" href="#delay">4.3.4.1. (1) delay</a></li>
+<li><a class="reference internal" href="#loss-loss-packet-loss">4.3.4.2. (2) loss: Loss (packet loss)</a></li>
+<li><a class="reference internal" href="#corrupt-corrupt">4.3.4.3. (4) corrupt: Corrupt</a></li>
+<li><a class="reference internal" href="#reorder-reorder">4.3.4.4. (5) reorder: Reorder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="operation.html"
+                          title="previous chapter"><span class="section-number">4.2. </span>General Commands</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="capture.html"
+                          title="next chapter"><span class="section-number">4.4. </span>Packet Capture</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="capture.html" title="4.4. Packet Capture"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="operation.html" title="4.2. General Commands"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">AGGRESSOR NETWORK USER MANUAL 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" ><span class="section-number">4. </span>Command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4.3. </span>Setting Filter</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, bitset.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>

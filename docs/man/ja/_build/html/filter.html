@@ -1,0 +1,576 @@
+
+
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.3. フィルター設定 &#8212; AGGRESSOR NETWORK 操作説明書 0.1 ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=792b5207"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/translations.js?v=4dbe4bdc"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="4.4. パケットキャプチャ" href="capture.html" />
+    <link rel="prev" title="4.2. 一般操作" href="operation.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="capture.html" title="4.4. パケットキャプチャ"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="operation.html" title="4.2. 一般操作"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AGGRESSOR NETWORK 操作説明書 0.1 ドキュメント</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="command.html" accesskey="U"><span class="section-number">4. </span>コマンド</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4.3. </span>フィルター設定</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="filter">
+<span id="id1"></span><h1><span class="section-number">4.3. </span>フィルター設定<a class="headerlink" href="#filter" title="この見出しへのパーマリンク">¶</a></h1>
+<section id="id2">
+<h2><span class="section-number">4.3.1. </span>フィルターの適用範囲<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<p>フィルター設定はネットワークデバイスの出力(送信側)に対して適用されます。</p>
+<p>例えば、遅延オプションを片方のデバイスにしか設定しない場合、一方向のパケットにのみ遅延が発生し、
+逆方向のパケットには遅延が発生しません。</p>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="_images/filter_delay_one.png"><img alt="_images/filter_delay_one.png" src="_images/filter_delay_one.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.5 </span><span class="caption-text">片方向の遅延</span><a class="headerlink" href="#id6" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>そのため、双方向に遅延を発生させる場合は、両デバイスに対して同じフィルター設定を行って下さい。</p>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="_images/filter_delay_both.png"><img alt="_images/filter_delay_both.png" src="_images/filter_delay_both.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.6 </span><span class="caption-text">双方向の遅延</span><a class="headerlink" href="#id7" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id3">
+<h2><span class="section-number">4.3.2. </span>編集<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+</section>
+<section id="id4">
+<h2><span class="section-number">4.3.3. </span>編集コマンド<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<p>フィルター・オプションは一旦編集バッファに格納され、 <cite>edit</cite> コマンドで編集中の内容を確認できます。
+<cite>update</cite> コマンドを実行するとフィルター・設定が変更されます。
+また、 <cite>reset</cite> コマンドで解除されます。</p>
+<figure class="align-default" id="id8">
+<a class="reference internal image-reference" href="_images/filter_command.png"><img alt="_images/filter_command.png" src="_images/filter_command.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.7 </span><span class="caption-text">編集コマンド</span><a class="headerlink" href="#id8" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<section id="edit">
+<h3><span class="section-number">4.3.3.1. </span>(1) edit<a class="headerlink" href="#edit" title="この見出しへのパーマリンク">¶</a></h3>
+<p>編集中でフィルター未適用の内容を表示します。</p>
+<figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="_images/edit.png"><img alt="_images/edit.png" src="_images/edit.png" style="width: 95%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.8 </span><span class="caption-text">edit コマンド</span><a class="headerlink" href="#id9" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="update">
+<h3><span class="section-number">4.3.3.2. </span>(2) update<a class="headerlink" href="#update" title="この見出しへのパーマリンク">¶</a></h3>
+<p>編集中の内容をフィルターに適用します。</p>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="_images/update.png"><img alt="_images/update.png" src="_images/update.png" style="width: 95%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.9 </span><span class="caption-text">update コマンド</span><a class="headerlink" href="#id10" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>上記の例では、帯域が64Kpbs(=512Kbit/second)に設定されています。</p>
+</section>
+<section id="reset">
+<h3><span class="section-number">4.3.3.3. </span>(3) reset<a class="headerlink" href="#reset" title="この見出しへのパーマリンク">¶</a></h3>
+<p>適用済み、及び、編集中のフィルタ設定をリセットします。</p>
+<figure class="align-default" id="id11">
+<a class="reference internal image-reference" href="_images/reset.png"><img alt="_images/reset.png" src="_images/reset.png" style="width: 95%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.10 </span><span class="caption-text">reset コマンド</span><a class="headerlink" href="#id11" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="id5">
+<h2><span class="section-number">4.3.4. </span>フィルター・オプション<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
+<p>フィルター・オプションを入力すると一旦編集バッファに格納されます。
+<cite>update</cite> コマンドを実行するとフィルター設定に反映されます。（前節参照）</p>
+<section id="delay">
+<h3><span class="section-number">4.3.4.1. </span>(1) delay: 遅延<a class="headerlink" href="#delay" title="この見出しへのパーマリンク">¶</a></h3>
+<p>パケットの遅延設定を行います。</p>
+<p>書式:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">delay</span> <span class="n">遅延時間</span>   <span class="p">{</span><span class="n">ばらつき</span><span class="p">}</span>   <span class="p">{</span><span class="n">発生率</span><span class="p">(</span><span class="o">%</span><span class="p">)}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id12">
+<caption><span class="caption-number">表 4.8 </span><span class="caption-text">delayオプションの引数</span><a class="headerlink" href="#id12" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>引数</p></th>
+<th class="head"><p>省略</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>遅延時間</p></td>
+<td><p>必須</p></td>
+<td><p>単位: s:秒 / ms:ミリ秒 / us:マイクロ秒</p></td>
+</tr>
+<tr class="row-odd"><td><p>ばらつき時間</p></td>
+<td><p>可</p></td>
+<td><p>単位: s:秒 / ms:ミリ秒 / us:マイクロ秒</p></td>
+</tr>
+<tr class="row-even"><td><p>ばらつき発生率</p></td>
+<td><p>可</p></td>
+<td><p>単位: %</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>実行例:</p>
+<ol class="loweralpha simple">
+<li><p>100msecの遅延を発生させる。</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>delay<span class="w"> </span>100ms
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="loweralpha simple" start="2">
+<li><p>100msec±20msecの遅延を発生させる。</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>delay<span class="w"> </span>100ms<span class="w">  </span>20ms
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="loweralpha simple" start="3">
+<li><p>100msec±20msecの遅延を50%、残りは100msecの遅延を発生させる。</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>delay<span class="w"> </span>100ms<span class="w">  </span>20ms<span class="w">  </span><span class="m">50</span>%
+</pre></div>
+</div>
+</div></blockquote>
+<p>注意:</p>
+<p>pingコマンドのようにパケット往復が発生する通信の場合、フィルターの適用範囲によって全体の遅延時間に違いが発生します。</p>
+<ol class="loweralpha">
+<li><p>双方向に遅延を設定した場合</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span>&gt;<span class="w"> </span>delay<span class="w"> </span>100ms
+</pre></div>
+</div>
+<p>往復で200msの遅延が発生します。</p>
+<figure class="align-default" id="id13">
+<a class="reference internal image-reference" href="_images/filter_delay_both-2.png"><img alt="_images/filter_delay_both-2.png" src="_images/filter_delay_both-2.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.11 </span><span class="caption-text">両方向の遅延</span><a class="headerlink" href="#id13" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>往復で100msにする場合は、50msの遅延設定にして下さい。</p>
+</li>
+<li><p>片方向に遅延を設定した場合</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>delay<span class="w"> </span>100ms
+</pre></div>
+</div>
+<p>片方向のみで100msの遅延が発生します。</p>
+<figure class="align-default" id="id14">
+<a class="reference internal image-reference" href="_images/filter_delay_one-2.png"><img alt="_images/filter_delay_one-2.png" src="_images/filter_delay_one-2.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.12 </span><span class="caption-text">片方向の遅延</span><a class="headerlink" href="#id14" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+<p>通信量が偏っている場合:</p>
+<p>サーバからのダウンロードのように片側の通信量が大きい場合はフィルターの設定方向に注意して下さい。</p>
+<blockquote>
+<div><figure class="align-default" id="id15">
+<a class="reference internal image-reference" href="_images/filter_download.png"><img alt="_images/filter_download.png" src="_images/filter_download.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.13 </span><span class="caption-text">通信量が偏っている例</span><a class="headerlink" href="#id15" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</section>
+<section id="loss">
+<h3><span class="section-number">4.3.4.2. </span>(2) loss: 損失 (パケットロス)<a class="headerlink" href="#loss" title="この見出しへのパーマリンク">¶</a></h3>
+<p>パケットロスを発生させます。</p>
+<p>書式:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">loss</span>  <span class="n">損失率</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id16">
+<caption><span class="caption-number">表 4.9 </span><span class="caption-text">lossオプションの引数</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>引数</p></th>
+<th class="head"><p>省略</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>損失率</p></td>
+<td><p>必須</p></td>
+<td><p>単位: %</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>実行例:</p>
+<ol class="loweralpha simple">
+<li><p>10% の確率でパケットロスする。</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>loss<span class="w"> </span><span class="m">10</span>%
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>遅延時間と同様にフィルターの適用範囲に注意して下さい。</p>
+</div>
+</section>
+<section id="duplicate">
+<h3><span class="section-number">4.3.4.3. </span>(3) duplicate: 重複<a class="headerlink" href="#duplicate" title="この見出しへのパーマリンク">¶</a></h3>
+<p>パケットの重複を発生させます。</p>
+<p>書式:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">duplicate</span>  <span class="n">発生率</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id17">
+<caption><span class="caption-number">表 4.10 </span><span class="caption-text">duplicateオプションの引数</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>引数</p></th>
+<th class="head"><p>省略</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>発生率</p></td>
+<td><p>必須</p></td>
+<td><p>単位: %</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>実行例:</p>
+<ol class="loweralpha">
+<li><p>10% の確率でパケットを重複させる。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>duplicate<span class="w"> </span><span class="m">10</span>%
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>遅延時間と同様にフィルターの適用範囲に注意して下さい。</p>
+</div>
+</section>
+<section id="corrupt">
+<h3><span class="section-number">4.3.4.4. </span>(4) corrupt: 破損<a class="headerlink" href="#corrupt" title="この見出しへのパーマリンク">¶</a></h3>
+<p>パケットのデータを書き換えます (ランダムな１bitを反転)</p>
+<p>書式:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">corrupt</span>  <span class="n">発生率</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id18">
+<caption><span class="caption-number">表 4.11 </span><span class="caption-text">corruptオプションの引数</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>引数</p></th>
+<th class="head"><p>省略</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>発生率</p></td>
+<td><p>必須</p></td>
+<td><p>単位: %</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>実行例:</p>
+<ol class="loweralpha">
+<li><p>0.1% の確率でパケットを書き換える。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>corrupt<span class="w"> </span><span class="m">0</span>.1%
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<ol class="arabic simple">
+<li><p>遅延時間と同様にフィルターの適用範囲に注意して下さい。</p></li>
+<li><p>TCP/IPパケットの場合はプロトコル・スタックでCRCチェックで誤りを検出してパケットは破棄されます。
+UDPパケットでチェックサムを無効にしている場合は上位層で誤り検出が必要です。</p></li>
+</ol>
+</div>
+</section>
+<section id="reorder">
+<h3><span class="section-number">4.3.4.5. </span>(5) reorder: 順序変更<a class="headerlink" href="#reorder" title="この見出しへのパーマリンク">¶</a></h3>
+<p>パケットの到着順序を変更します。</p>
+<p>書式:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">reorder</span>  <span class="n">発生率</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id19">
+<caption><span class="caption-number">表 4.12 </span><span class="caption-text">reorderオプションの引数</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>引数</p></th>
+<th class="head"><p>省略</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>発生率</p></td>
+<td><p>必須</p></td>
+<td><p>単位: %</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>実行例:</p>
+<ol class="loweralpha">
+<li><p>10% の確率でパケットの到達順序を変更する。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>reorder<span class="w"> </span><span class="m">10</span>%
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>遅延時間と同様にフィルターの適用範囲に注意して下さい。</p>
+</div>
+</section>
+<section id="rate">
+<h3><span class="section-number">4.3.4.6. </span>(6) rate: 帯域制御<a class="headerlink" href="#rate" title="この見出しへのパーマリンク">¶</a></h3>
+<p>書式:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">rate</span>  <span class="n">帯域</span>
+</pre></div>
+</div>
+<blockquote>
+<div><table class="docutils align-default" id="id20">
+<caption><span class="caption-number">表 4.13 </span><span class="caption-text">rateオプションの引数</span><a class="headerlink" href="#id20" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>引数</p></th>
+<th class="head"><p>省略</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>帯域</p></td>
+<td><p>必須</p></td>
+<td><p>単位</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id21">
+<caption><span class="caption-number">表 4.14 </span><span class="caption-text">単位</span><a class="headerlink" href="#id21" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>単位</p></th>
+<th class="head"><p>意味</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bps</p></td>
+<td><p>byte/second</p></td>
+</tr>
+<tr class="row-odd"><td><p>bit</p></td>
+<td><p>bit/second</p></td>
+</tr>
+<tr class="row-even"><td><p>指定なし</p></td>
+<td><p>bit/second</p></td>
+</tr>
+<tr class="row-odd"><td><p>K / k</p></td>
+<td><p>Killo (1,000)</p></td>
+</tr>
+<tr class="row-even"><td><p>M / m</p></td>
+<td><p>Mega (1,000,000)</p></td>
+</tr>
+<tr class="row-odd"><td><p>G / g</p></td>
+<td><p>Giga (1,000,000,000)</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id22">
+<caption><span class="caption-number">表 4.15 </span><span class="caption-text">設定例</span><a class="headerlink" href="#id22" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>例</p></th>
+<th class="head"><p>解釈</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1000</p></td>
+<td><p>1K bit/second</p></td>
+</tr>
+<tr class="row-odd"><td><p>1K</p></td>
+<td><p>1K bit/second</p></td>
+</tr>
+<tr class="row-even"><td><p>1Kbit</p></td>
+<td><p>1K bit/second</p></td>
+</tr>
+<tr class="row-odd"><td><p>1Kbps</p></td>
+<td><p>1K byte/second</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>実行例:</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>rate<span class="w"> </span>64kbps
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>遅延時間と同様にフィルターの適用範囲に注意して下さい。</p>
+</div>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">目次</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">4.3. フィルター設定</a><ul>
+<li><a class="reference internal" href="#id2">4.3.1. フィルターの適用範囲</a></li>
+<li><a class="reference internal" href="#id3">4.3.2. 編集</a></li>
+<li><a class="reference internal" href="#id4">4.3.3. 編集コマンド</a><ul>
+<li><a class="reference internal" href="#edit">4.3.3.1. (1) edit</a></li>
+<li><a class="reference internal" href="#update">4.3.3.2. (2) update</a></li>
+<li><a class="reference internal" href="#reset">4.3.3.3. (3) reset</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">4.3.4. フィルター・オプション</a><ul>
+<li><a class="reference internal" href="#delay">4.3.4.1. (1) delay: 遅延</a></li>
+<li><a class="reference internal" href="#loss">4.3.4.2. (2) loss: 損失 (パケットロス)</a></li>
+<li><a class="reference internal" href="#duplicate">4.3.4.3. (3) duplicate: 重複</a></li>
+<li><a class="reference internal" href="#corrupt">4.3.4.4. (4) corrupt: 破損</a></li>
+<li><a class="reference internal" href="#reorder">4.3.4.5. (5) reorder: 順序変更</a></li>
+<li><a class="reference internal" href="#rate">4.3.4.6. (6) rate: 帯域制御</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>前のトピックへ</h4>
+    <p class="topless"><a href="operation.html"
+                          title="前の章へ"><span class="section-number">4.2. </span>一般操作</a></p>
+  </div>
+  <div>
+    <h4>次のトピックへ</h4>
+    <p class="topless"><a href="capture.html"
+                          title="次の章へ"><span class="section-number">4.4. </span>パケットキャプチャ</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="capture.html" title="4.4. パケットキャプチャ"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="operation.html" title="4.2. 一般操作"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">AGGRESSOR NETWORK 操作説明書 0.1 ドキュメント</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="command.html" ><span class="section-number">4. </span>コマンド</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4.3. </span>フィルター設定</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; 著作権 2023, bitset.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>
