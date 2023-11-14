@@ -5,7 +5,11 @@ AGGRESSOR NETWORK
 Linuxの提供する tc-netem (Network Emulator) に対する簡易UIを提供します。
 
 
-|image-main|
+.. image:: docs/main.png
+   :alt: AGGRESSOR NETWORK
+   :align: center
+   :width: 100%
+   
 
 
 機能

@@ -5,7 +5,11 @@ AGGRESSOR NETWORK
 It provides a simple UI for `tc-netem`, a Linux program for network emulation.
 
 
-|image-main|
+.. image:: docs/main.png
+   :alt: AGGRESSOR NETWORK
+   :align: center
+   :width: 100%
+   
 
 
 Features
