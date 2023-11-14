@@ -5,6 +5,9 @@ AGGRESSOR NETWORK
 Linuxの提供する tc-netem (Network Emulator) に対する簡易UIを提供します。
 
 
+|image-main|
+
+
 機能
 -----
 
@@ -42,3 +45,11 @@ Hardware:
 Software:
 
 - Raspberry Pi OS (32-bit) Lite
+
+
+ユーザーマニュアル
+--------------------
+
+`日本語マニュアル <https://bitset-jp.github.io/aggressor_network_man_ja/>`_
+
+`English Manual <https://bitset-jp.github.io/aggressor_network_man_en/>`_
