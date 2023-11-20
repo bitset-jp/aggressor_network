@@ -42,7 +42,7 @@ tmux select-pane -t 4 -T eth1
 
 tmux send-keys -t 1  "PS1=''" C-m
 tmux send-keys -t 1  "$BIN_DIR/help.sh" C-m
-tmux send-keys -t 2  "dstat -t --net -N eth0,eth1" C-m
+(sleep 5; tmux send-keys -t 2  "dstat -t --net -N eth0,eth1" C-m)&
 tmux send-keys -t 3  "LANG=C sudo -E iftop -i eth0 -n" C-m
 tmux send-keys -t 4  "LANG=C sudo -E iftop -i eth1 -n" C-m
 

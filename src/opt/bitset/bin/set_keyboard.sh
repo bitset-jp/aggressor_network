@@ -20,8 +20,14 @@ if [ ! -e $res ]; then
 fi
 
 sudo mount -o remount,rw /
+sudo mount -o remount,rw /boot
+
 sudo rm $dst >> $LOG_FILE 2>&1
 sudo ln -s $res $dst >> $LOG_FILE 2>&1
+touch $res
+sudo /etc/init.d/console-setup.sh restart
+
 sudo mount -o remount,ro /
+sudo mount -o remount,ro /boot
 exit 0
 
