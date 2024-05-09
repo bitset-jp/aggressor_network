@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-
+# -*- coding: utf-8 -*-
 
 class Setting:
   # デバイス名
@@ -46,6 +45,18 @@ class Setting:
     else:
       return "-------"
 
+  def clone(self):
+    dst = Setting(self.dev)
+    dst.limit = self.limit
+    dst.limit_backup = self.limit_backup
+    dst.delay = self.delay
+    dst.loss = self.loss
+    dst.duplicate = self.duplicate
+    dst.corrupt = self.corrupt
+    dst.reorder = self.reorder
+    dst.rate = self.rate
+    return dst
+
   def clear(self):
     if self.limit is not None:
       self.limit_backup = self.limit
@@ -83,11 +94,7 @@ class Setting:
     '''
     1. キャパシティ limit:
     '''
-    if args is None or len(args) == 0:
-      self.limit = None  
-      return 
-
-    self.limit = args[0]
+    self.limit = args[0] if args else None
 
   def set_delay(self, args):
     '''
@@ -96,44 +103,28 @@ class Setting:
     2. JITTER:  ゆらぎ (s/ms/us)     default:us
     3. RANDOM:  発生率 (%)           default:%
     '''
-    if args is None or len(args) == 0:
-      self.deyay = None  
-      return
-
-    self.delay = args
+    self.delay = args if args else None
 
 
   def set_loss(self, args):
     '''
     1. ロス率(%) default:%
     '''
-    if args is None or len(args) == 0:
-      self.loss = None  
-      return 
-
-    self.loss = args
+    self.loss = args if args else None
 
 
   def set_duplicate(self, args):
     '''
     1. 重複率(%) default:%
     '''
-    if args is None or len(args) == 0:
-      self.duplicate = None  
-      return 
-
-    self.duplicate = args
+    self.duplicate = args if args else None
 
 
   def set_corrupt(self, args):
     '''
     1. 破損率(%) default:%
     '''
-    if args is None or len(args) == 0:
-      self.corrupt = None  
-      return 
-
-    self.corrupt = args
+    self.corrupt = args if args else None
 
 
   def set_reorder(self, args):
@@ -142,23 +133,14 @@ class Setting:
 
     delay が指定されていること
     '''
-    if args is None or len(args) == 0:
-      self.reorder = None  
-      return 
-
-    self.reorder = args  
+    self.reorder = args if args else None
 
 
   def set_rate(self, args):
     '''
     1. 帯域 (T/G/M/K/'' bit/bps) ... default: bit
     '''
-    if args is None or len(args) == 0:
-      self.rate = None  
-      return 
-
-    self.rate = args  
-
+    self.rate = args if args else None
 
 
   def validate(self):

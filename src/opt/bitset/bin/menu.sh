@@ -36,6 +36,8 @@ toilet  --filter border:metal -f future ' NETWORK  EMULATOR '
 echo  -e "  copyright (c) bitset.jp 2023  \e[36m https://bitset/jp  \e[m"
 echo ""
 
+export LANG=c
+
 while true;
 do
   brctl show $BRIDGE > /dev/null
