@@ -43,9 +43,6 @@ Usage: ... netem
 #
 settings = []
 
-# フィルターに適用された設定 ... configファイルへの保存に使用する
-applied_settings = [None, None]
-
 #############################################################################
 # public
 #############################################################################
@@ -128,30 +125,41 @@ def set_from_dict(dict):
           opt.set_rate(args)
 
 def get_dict():
+  options = ['delay', 'loss', 'duplicate', 'reorder', 'corrupt', 'rate']
   dict = {}
-  for opt in applied_settings:
+  
+  for opt in settings:
     if opt is None:
+      continue
+    status = subprocess.check_output(f"tc qdisc show dev {opt.dev}".split()).decode('utf-8').replace("\n", "").split()
+    if status[0] != "qdisc":
       continue
 
     dev = {}
-    
-    if opt.limit:
-      dev["limit"] = opt.limit
-    if opt.delay:
-      dev["delay"] = ' '.join(opt.delay)
-    if opt.loss:
-      dev["loss"] = ' '.join(opt.loss)
-    if opt.duplicate:
-      dev["duplicate"] = ' '.join(opt.duplicate)
-    if opt.corrupt:
-      dev["corrupt"] = ' '.join(opt.corrupt)
-    if opt.reorder:
-      dev["reorder"] = ' '.join(opt.reorder)
-    if opt.rate:
-      dev["rate"] = ' '.join(opt.rate)
+    key = None
+    params = ""
+
+    for word in status:
+
+      if word is 'gap':
+        break
+      elif word in options:
+        if key and params:
+          dev[key]= params.strip()
+
+        key = word
+        params = ""
+        #print(key)
+        continue
+      elif key:
+        params += f"{word} " 
+        #print(params)
+    if key and params:
+      dev[key]= params.strip()
 
     if dev:
       dict[opt.dev] = dev
+
   print(dict)
   return dict
 
@@ -159,7 +167,6 @@ def get_dict():
 # フィルタークリア
 def reset(index):
   global settings
-  global applied_settings
   
   assert index == 0 or index == 1 or index is None, f"invalid index:{index}"
 
@@ -167,7 +174,6 @@ def reset(index):
     for i, opt in enumerate(settings):
       if index == i or index is None:
         __init_filter(opt)
-        applied_settings[i] = None
 
   except Exception as e:
     print(e)
@@ -177,23 +183,18 @@ def reset(index):
 # フィルタ設定適用
 def update(index):
   global settings
-  global applied_settings
 
   assert index == 0 or index == 1 or index is None, f"invalid index:{index}"
 
   try:
-    applied_settings = [None, None]
-
     for i, opt in enumerate(settings):
       if index == i or index is None:
         (ret, msg) = opt.validate()
 
         if ret is True:
-          applied_settings[i] = opt.clone()#copy.deepcopy(opt)
           (ret, msg) = __update_filter(opt)
 
         if ret is False:
-          applied_settings[i] = None
           err = f"[{opt.dev}] {msg}"
           print_error(err)
           logging.error(err)
