@@ -9,7 +9,7 @@
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: 目次:
    :numbered:
 
