@@ -141,7 +141,7 @@ def get_dict():
 
     for word in status:
 
-      if word is 'gap':
+      if word == 'gap':
         break
       elif word in options:
         if key and params:
