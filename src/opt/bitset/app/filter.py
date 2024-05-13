@@ -100,9 +100,74 @@ def get_status(index):
     logging.exception(e)
 
 
+# ファイルから読み込んだ内容を登録
+def set_from_dict(dict):
+  global settings
+
+  for i, opt in enumerate(settings):
+    opt.clear()
+    if opt.dev in dict:
+      for key in dict[opt.dev]:
+        args = dict[opt.dev][key].split()
+        if key == "limit":
+          opt.set_limit(args)
+        elif key == "delay":
+          opt.set_delay(args)
+        elif key == "loss":
+          opt.set_loss(args)
+        elif key == "duplicate":
+          opt.set_duplicate(args)
+        elif key == "corrupt":
+          opt.set_corrupt(args)
+        elif key == "reorder":
+          opt.set_reorder(args)
+        elif key == "rate":
+          opt.set_rate(args)
+
+def get_dict():
+  options = ['delay', 'loss', 'duplicate', 'reorder', 'corrupt', 'rate']
+  dict = {}
+  
+  for opt in settings:
+    if opt is None:
+      continue
+    status = subprocess.check_output(f"tc qdisc show dev {opt.dev}".split()).decode('utf-8').replace("\n", "").split()
+    if status[0] != "qdisc":
+      continue
+
+    dev = {}
+    key = None
+    params = ""
+
+    for word in status:
+
+      if word == 'gap':
+        break
+      elif word in options:
+        if key and params:
+          dev[key]= params.strip()
+
+        key = word
+        params = ""
+        #print(key)
+        continue
+      elif key:
+        params += f"{word} " 
+        #print(params)
+    if key and params:
+      dev[key]= params.strip()
+
+    if dev:
+      dict[opt.dev] = dev
+
+  print(dict)
+  return dict
+
+
 # フィルタークリア
 def reset(index):
   global settings
+  
   assert index == 0 or index == 1 or index is None, f"invalid index:{index}"
 
   try:
@@ -115,9 +180,10 @@ def reset(index):
     logging.exception(e)
 
 
-# フィルタ設定変更
+# フィルタ設定適用
 def update(index):
   global settings
+
   assert index == 0 or index == 1 or index is None, f"invalid index:{index}"
 
   try:
@@ -229,7 +295,7 @@ def __update_filter(opt):
 
   params = ""
 
-  if opt.delay is not None:
+  if opt.delay:
     tmp = f" delay {opt.delay[0]} "
     if 2 <= len(opt.delay):
       tmp += f" {opt.delay[1]} "
@@ -237,23 +303,23 @@ def __update_filter(opt):
         tmp += f" {opt.delay[2]} "
     params += tmp
 
-  if opt.loss is not None:
+  if opt.loss:
     tmp = f" loss {opt.loss[0]} "
     params += tmp
 
-  if opt.duplicate is not None:
+  if opt.duplicate:
     tmp = f" duplicate {opt.duplicate[0]} "
     params += tmp
 
-  if opt.corrupt is not None:
+  if opt.corrupt:
     tmp = f" corrupt {opt.corrupt[0]} "
     params += tmp
 
-  if opt.reorder is not None:
+  if opt.reorder:
     tmp = f" reorder {opt.reorder[0]} "
     params += tmp
 
-  if opt.rate is not None:
+  if opt.rate:
     tmp = f" rate {opt.rate[0]} "
     params += tmp
 

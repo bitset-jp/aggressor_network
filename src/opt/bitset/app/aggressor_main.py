@@ -26,12 +26,13 @@ import datetime
 import logging
 import queue
 import threading
-
+import datetime
 
 from common import *
 import filter
 import utils
 import capture
+import config_file
 
 #############################################################################
 # const
@@ -228,6 +229,27 @@ def stop_capture():
   os.system('tmux send-keys -t 0  C-c')
 
 
+def load_config(args):
+  if mount_path is None:
+    print_error("no usb memory")
+    return
+  config = config_file.load(mount_path, args[0])  
+  if config:
+    print(config)
+    filter.set_from_dict(config)
+  else:
+    print_error("failed to load config")
+
+def save_config(args):
+  if mount_path is None:
+    print_error("no usb memory")
+    return
+  dict = filter.get_dict()
+  if dict:
+    dict['timestamp'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    config_file.save(mount_path, args[0], dict)
+
+
 def show_usb():
   if mount_path is not None:
     print("=== USB ===")
@@ -382,7 +404,7 @@ def main():
       prompt = get_prompt(index)
       args = input(prompt).lower().split()
       
-      if len(args) == 0:
+      if not args: #len(args) == 0:
         show_status()
         continue
 
@@ -450,6 +472,10 @@ def main():
         exit_code = 1
         is_run = False
         break
+      elif cmd == "load":
+        load_config(args[1:])
+      elif cmd == "save":  
+        save_config(args[1:])
       elif cmd == "exit_xxx":
         exit_code = 99
         is_run = False
