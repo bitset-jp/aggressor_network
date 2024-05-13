@@ -7,9 +7,9 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'AGGRESSOR NETWORK 操作説明書'
-copyright = '2023, bitset'
+copyright = '2024, bitset'
 author = '株式会社bitset'
-release = '0.1'
+release = '1.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
